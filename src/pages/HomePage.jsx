@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import Pomodoro from '../components/Pomodoro'
 import Quote from '../components/Quote'
 import To_do from '../components/To_do'
-import Weather from '../components/Weather'
+import Time from '../components/Time'
 const HomePage = () => {
     return (
         <>
@@ -13,7 +13,7 @@ const HomePage = () => {
                 <Quote />
             </div>
             <div className='list_box'>
-                <Weather />
+                <Time />
                 <To_do/>
             </div>
             <StyleSheet />

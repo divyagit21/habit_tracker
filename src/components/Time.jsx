@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 
-const Weather = () => {
+
+const Time = () => {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const [info, setInfo] = useState(null);
 
@@ -12,36 +12,9 @@ const Weather = () => {
     }, 1000);
     return () => clearInterval(interval); 
   }, []);
-
-  useEffect(() => {
-    const fetchWeather = async () => {
-      try {
-        const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=Proddatur,pdtr&appid=${apiKey}`
-        );
-        setInfo(response.data);
-      } catch (err) {
-        console.error('Error loading weather data:', err);
-      }
-    };
-    fetchWeather();
-  }, []);
-
   return (
     <>
-      <div className="weather">
-        <div>
-        <div>Weather :</div>
-        {info ? (
-          <>
-            <div>{info.name}</div>
-            <div>{info.main.temp}°C</div>
-          </>
-        ) : (
-          <div>Loading weather...</div>
-        )}
-        </div>
-        <br></br>
+      <div className="time">
         <div className=".curr_time">
           <div>Time :</div>
           <div>{time}</div>
@@ -55,7 +28,7 @@ const Weather = () => {
 const StyleSheet = () => {
   return (
     <style>{`
-      .weather {
+      .time {
        min-height:420px;
         width: 13%;
         font-size: clamp(0.8rem, 2.3vw, 2.5rem);
@@ -70,7 +43,7 @@ const StyleSheet = () => {
         color: var(--color-text);
       }
         @media (max-width: 768px) {
-        .weather {
+        .time {
             min-height:auto;
             flex-direction:row;
             gap:5%;
@@ -81,4 +54,4 @@ const StyleSheet = () => {
   );
 };
 
-export default Weather;
+export default Time;
