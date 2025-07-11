@@ -49,7 +49,6 @@ const StyleSheet = () => {
        flex-direction: row;
        gap: 2%;
        flex-wrap: wrap;
-    //    margin-bottom: 2rem;
     }
 
     @media (max-width: 768px) {

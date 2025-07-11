@@ -14,8 +14,8 @@ const Time = () => {
   }, []);
   return (
     <>
-      <div className="time">
-        <div className=".curr_time">
+      <div className="currtime">
+        <div className="curr_time">
           <div>Time :</div>
           <div>{time}</div>
         </div>
@@ -28,7 +28,7 @@ const Time = () => {
 const StyleSheet = () => {
   return (
     <style>{`
-      .time {
+      .currtime {
        min-height:420px;
         width: 13%;
         font-size: clamp(0.8rem, 2.3vw, 2.5rem);
@@ -43,7 +43,7 @@ const StyleSheet = () => {
         color: var(--color-text);
       }
         @media (max-width: 768px) {
-        .time {
+        .currtime {
             min-height:auto;
             flex-direction:row;
             gap:5%;
